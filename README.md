@@ -17,12 +17,18 @@ Sous linux, la ou les sorties du script peuvent etre converties en mp3 avec lame
 
 Sources audio
 -------------
-fromtexttospeach.com synthèse vocale à partir de texte
+
+Les instructions sont générées avec le site 
+http://www.fromtexttospeech.com/
+de synthèse vocale à partir de texte.
+Remarque: seule la voie masculine française semble fonctionner...
 
 Le script n'accepte pour l'instant que des fichiers wav en 22050 Hz.
 
 Convertir les fichiers mp3 avec `lame --decode <fichier.mp3> <fichier.wav>`
 Le script `d.sh` (alias d) effectue la convertion d'un fichier.
+
+Pour écouter un fichier, vous pouvez utiliser vlc: `cvlc --play-and-exit <fichier>`
 
 Astuces
 -------
