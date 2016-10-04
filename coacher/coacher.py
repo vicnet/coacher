@@ -2,13 +2,15 @@ import math
 import wave
 import struct
 
-class Coacher:
+from playlist import Playlist
+
+class Coacher(object):
     
     def __init__(self, outpath='.'):
         self.rate = 22050;
         self.inpath = 'data'
         self.outpath = outpath
-        self.playlist = []
+        self.playlist = Playlist()
 
     def pcm_channels(self, wave_name):
         """Given a file-like object or file path representing a wave file,
@@ -80,7 +82,7 @@ class Coacher:
 
         wav_file.close()
         mp3 = wave_name+'.mp3'
-        self.playlist.append(mp3)
+        self.playlist += (mp3, self.duration(channel), wave_name)
 
     def silence(self, duration_milliseconds=500):
         """
@@ -113,14 +115,8 @@ class Coacher:
         """Returns duration of channel in ms"""
         return len(channel)/(self.rate/1000.0)
 
-    def save_playlist(self, mp3_list = None, m3u_name = 'seance.m3u'):
-        FORMAT_DESCRIPTOR = "#EXTM3U"
-        RECORD_MARKER = "#EXTINF"
-
+    def save_playlist(self, mp3_list = None, m3u_name = 'seance'):
         if mp3_list is None:
             mp3_list = self.playlist
-        fp = file(m3u_name, "w")
-        fp.write(FORMAT_DESCRIPTOR + "\n")
-        for track in mp3_list:
-            fp.write(track+'\n')
-        fp.close()
+        file_name = self.outpath+'/'+m3u_name+'.m3u'
+        mp3_list.save(file_name)

@@ -159,14 +159,12 @@ def retour():
 
 explication()
 echauffement()
-lignes_droites()
-series()
-serie('1re-serie')
-serie('2e-serie')
-serie('3e-serie')
-serie('4e-serie')
-serie('der-serie')
-retour()
+#lignes_droites()
+#series()
+#serie('1re-serie')
+#serie('2e-serie')
+#serie('3e-serie')
+#serie('4e-serie')
+#serie('der-serie')
+#retour()
 coacher.save_playlist()
-
-#['explication.mp3', 'echauffement.mp3', 'lignes.mp3', 'series.mp3', 'retour.mp3']
