@@ -18,8 +18,8 @@ Sous linux, la ou les sorties du script peuvent etre converties en mp3 avec lame
 Sources audio
 -------------
 
-Les instructions sont générées avec le site 
-http://www.fromtexttospeech.com/
+Les instructions sont générées avec le site:
+  http://www.fromtexttospeech.com/
 de synthèse vocale à partir de texte.
 Remarque: seule la voie masculine française semble fonctionner...
 
